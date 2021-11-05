@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
+//Creating styled list section.
 const StyledList = styled.li`
     display: flex;
     flex-direction: column;
@@ -13,19 +13,22 @@ const StyledList = styled.li`
     padding: 12px;
     `;
 
-
+//Styled Heading
 const StyledH2 = styled.h2`
     font-family: Helvetica;
     font-size: 21px;
     color: #443e3e;
 `;
 
+//Styled H3
 const StyledData = styled.h3`
     display: flex;
     flex-wrap: wrap;
     font-size: 16px;
     color: cornsilk;
 `;
+
+//Creating props to send data to parent component. 
 const StarWarPeople = props =>{
     return(
         <StyledList>
@@ -40,5 +43,5 @@ const StarWarPeople = props =>{
         </StyledList>
     );
 };
-export default StarWarPeople;
+export default StarWarPeople; //exporting Child Component
 

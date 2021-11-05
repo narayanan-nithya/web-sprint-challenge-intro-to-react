@@ -1,22 +1,23 @@
 import React ,{useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
-import styled from 'styled-components';
-import StarWarPeople from './components/Character';
+import styled from 'styled-components'; //importing styled and axios 
+import StarWarPeople from './components/Character'; // importing StarwarPeople component from Character.js
 
+//creating Styling Div
 const Div = styled.div`
   display: flex;
   justify-content: center;
   padding:12%;
   margin-top: 0px;
   `;
-
+//setting state
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
   const [warCharacters, setWarCharacters] = useState([]);
   
-
+//Syncing Effect
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
@@ -35,6 +36,7 @@ const App = () => {
     
   }, []);
 
+  //rendering to App
   return (
     <div className="App">
       <h1 className="Header">Star War Characters</h1>
