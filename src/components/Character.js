@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const StyledList = styled.li`
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     margin: auto;
     border: 7px outset bisque;
     border-radius: 7px;
