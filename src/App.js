@@ -6,7 +6,8 @@ import StarWarPeople from './components/Character';
 
 const Div = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  padding:12%;
   `;
 
 const App = () => {
@@ -19,12 +20,12 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
   useEffect (() =>{
-    axios.get(`https://swapi.dev/api/people`)
+    axios.get('https://swapi.dev/api/people')
     .then(
       res => {
-        const warChar = res.data.results;
-        console.log(warChar);
-        setWarCharacters(warChar);
+        const warData = res.data
+        console.log(warData);
+       setWarCharacters(warData);
         
       })
     .catch( err => {
@@ -35,11 +36,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <h1 className="Header">Star War Characters</h1>
       <Div>
-        {warCharacters.map(data => {
+        {
+        warCharacters.map(warCharacter => {
           return (
-            <StarWarPeople name ={data.name} homeworld ={data.homeworld} gender = {data.gender} birth_year ={data.birth_year} eye_color ={data.eye_color} skin_color = {data.skin_color} hair_color ={data.hair_color} />
+            <StarWarPeople key = {warCharacter.id} name ={warCharacter.name} homeworld ={warCharacter.homeworld} gender = {warCharacter.gender} birth_year ={warCharacter.birth_year} eye_color ={warCharacter.eye_color} skin_color = {warCharacter.skin_color} hair_color ={warCharacter.hair_color} />
           );
         })}
       </Div>

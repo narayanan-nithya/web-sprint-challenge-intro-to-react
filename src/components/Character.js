@@ -3,13 +3,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const StyledList = styled.div`
+const StyledList = styled.li`
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border: 3px solid brown;
+    flex-direction: column;
+    margin: auto;
+    border: 7px ridge beige;
     border-radius: 7px;
-    padding: 12px;
+    padding: 18px;
     `;
 
 
@@ -18,17 +18,22 @@ const StyledH2 = styled.h2`
     font-size: 18px;
 `;
 
-
+const StyledData = styled.h3`
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+`;
 const StarWarPeople = props =>{
     return(
         <StyledList>
-            <StyledH2>{props.name}</StyledH2>
-            <p>Home : {props.homeworld}</p>
-            <p>Gender: {props.gender}</p>
-            <p>Born : {props.birth_year}</p>
-            <p>Eye Color: {props.eye_color}</p>
-            <p>Skin Color: {props.skin_color}</p>
-            <p>Hair Color: {props.hair_color}</p>
+            <StyledH2>Name: {props.name}</StyledH2>
+            <StyledData>{props.id}</StyledData>
+            <StyledData>Home : </StyledData><p> {props.homeworld}</p>
+            <StyledData>Gender: {props.gender}</StyledData>
+            <StyledData>Born : {props.birth_year}</StyledData>
+            <StyledData>Eye Color: {props.eye_color}</StyledData>
+            <StyledData>Skin Color: {props.skin_color}</StyledData>
+            <StyledData>Hair Color: {props.hair_color}</StyledData>
         </StyledList>
     );
 };
