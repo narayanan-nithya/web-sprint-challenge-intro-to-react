@@ -11,11 +11,7 @@ const StyledList = styled.div`
     border-radius: 7px;
     padding: 12px;
     `;
-const StyledHeading = styled.h1`
-    font-family: Arial, Helvetica, sans-serif ;
-    font-size: 27px;
-    color: brown;
-`;
+
 
 const StyledH2 = styled.h2`
     font-family: Helvetica;
@@ -23,22 +19,18 @@ const StyledH2 = styled.h2`
 `;
 
 
-export default function StarWarPeople(props) {
-    console.log(props);
-    const {warCharName, warCharHome, warCharBirth, warCharGender, warCharHair, warCharEye, warCharSkin, warCharHeight, warCharMass } = props
-    return (
+const StarWarPeople = props =>{
+    return(
         <StyledList>
-            <StyledH2>{warCharName}</StyledH2>
-            <p>{warCharHome}</p>
-            <p>{warCharBirth}</p>
-            <p>{warCharGender}</p>
-            <p>{warCharHair}</p>
-            <p>{warCharEye}</p>
-            <p>{warCharSkin}</p>
-            <p>{warCharHeight}</p>
-            <p>{warCharMass}</p>
-
+            <StyledH2>{props.name}</StyledH2>
+            <p>Home : {props.homeworld}</p>
+            <p>Gender: {props.gender}</p>
+            <p>Born : {props.birth_year}</p>
+            <p>Eye Color: {props.eye_color}</p>
+            <p>Skin Color: {props.skin_color}</p>
+            <p>Hair Color: {props.hair_color}</p>
         </StyledList>
     );
 };
+export default StarWarPeople;
 
