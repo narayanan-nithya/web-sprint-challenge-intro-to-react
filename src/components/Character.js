@@ -23,19 +23,20 @@ const StyledH2 = styled.h2`
 `;
 
 
-export default function (props) {
-    const StarWarInfo = props;
+export default function StarWarPeople(props) {
+    console.log(props);
+    const {warCharName, warCharHome, warCharBirth, warCharGender, warCharHair, warCharEye, warCharSkin, warCharHeight, warCharMass } = props
     return (
         <StyledList>
-            <StyledH2>{props.name}</StyledH2>
-            <p>{props.homeworld}</p>
-            <p>{props.birth_year}</p>
-            <p>{props.gender}</p>
-            <p>{props.hair_color}</p>
-            <p>{props.eye_color}</p>
-            <p>{props.skin_color}</p>
-            <p>{props.height}</p>
-            <p>{props.mass}</p>
+            <StyledH2>{warCharName}</StyledH2>
+            <p>{warCharHome}</p>
+            <p>{warCharBirth}</p>
+            <p>{warCharGender}</p>
+            <p>{warCharHair}</p>
+            <p>{warCharEye}</p>
+            <p>{warCharSkin}</p>
+            <p>{warCharHeight}</p>
+            <p>{warCharMass}</p>
 
         </StyledList>
     );
