@@ -7,33 +7,35 @@ const StyledList = styled.li`
     display: flex;
     flex-direction: column;
     margin: auto;
-    border: 7px ridge beige;
+    border: 7px outset bisque;
     border-radius: 7px;
-    padding: 18px;
+    padding: 12px;
     `;
 
 
 const StyledH2 = styled.h2`
     font-family: Helvetica;
-    font-size: 18px;
+    font-size: 21px;
+    color: #443e3e;
 `;
 
 const StyledData = styled.h3`
     display: flex;
     flex-wrap: wrap;
-    font-size: 12px;
+    font-size: 16px;
+    color: cornsilk;
 `;
 const StarWarPeople = props =>{
     return(
         <StyledList>
-            <StyledH2>Name: {props.name}</StyledH2>
+            <StyledH2>{props.name}</StyledH2>
             <StyledData>{props.id}</StyledData>
             <StyledData>Home : </StyledData><p> {props.homeworld}</p>
-            <StyledData>Gender: {props.gender}</StyledData>
-            <StyledData>Born : {props.birth_year}</StyledData>
-            <StyledData>Eye Color: {props.eye_color}</StyledData>
-            <StyledData>Skin Color: {props.skin_color}</StyledData>
-            <StyledData>Hair Color: {props.hair_color}</StyledData>
+            <StyledData>Gender:</StyledData> <p>{props.gender}</p>
+            <StyledData>Born : </StyledData> <p>{props.birth_year}</p>
+            <StyledData>Eye Color:</StyledData> <p>{props.eye_color}</p>
+            <StyledData>Skin Color:</StyledData> <p>{props.skin_color}</p>
+            <StyledData>Hair Color: </StyledData> <p>{props.hair_color}</p>
         </StyledList>
     );
 };
